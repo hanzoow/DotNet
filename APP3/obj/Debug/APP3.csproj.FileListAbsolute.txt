@@ -1,0 +1,11 @@
+D:\c#\APP3\APP3\bin\Debug\APP3.exe.config
+D:\c#\APP3\APP3\bin\Debug\APP3.exe
+D:\c#\APP3\APP3\bin\Debug\APP3.pdb
+D:\c#\APP3\APP3\obj\Debug\APP3.csprojAssemblyReference.cache
+D:\c#\APP3\APP3\obj\Debug\APP3.Form1.resources
+D:\c#\APP3\APP3\obj\Debug\APP3.Properties.Resources.resources
+D:\c#\APP3\APP3\obj\Debug\APP3.csproj.GenerateResource.cache
+D:\c#\APP3\APP3\obj\Debug\APP3.exe
+D:\c#\APP3\APP3\obj\Debug\APP3.pdb
+D:\c#\APP3\APP3\bin\Debug\Data\student.husc
+D:\c#\APP3\APP3\bin\Debug\Data\history.husc

@@ -1,0 +1,10 @@
+D:\c#\APP3\APP3\bin\Release\Data\studen.husc
+D:\c#\APP3\APP3\bin\Release\APP3.exe.config
+D:\c#\APP3\APP3\bin\Release\APP3.exe
+D:\c#\APP3\APP3\bin\Release\APP3.pdb
+D:\c#\APP3\APP3\obj\Release\APP3.csprojAssemblyReference.cache
+D:\c#\APP3\APP3\obj\Release\APP3.Form1.resources
+D:\c#\APP3\APP3\obj\Release\APP3.Properties.Resources.resources
+D:\c#\APP3\APP3\obj\Release\APP3.csproj.GenerateResource.cache
+D:\c#\APP3\APP3\obj\Release\APP3.exe
+D:\c#\APP3\APP3\obj\Release\APP3.pdb
