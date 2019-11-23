@@ -15,13 +15,16 @@ namespace APP3
     public partial class Form1 : Form
     {
         private string pathDataToStudentInfo;
+        public static string pathDataHistory;
         private string pathDataToHistoryInfo;
+        Student student;
         public Form1(string idStudent)
         {
             InitializeComponent();
             ptcb1.AllowDrop = true;
             dtgvQuaTrinhHocTap.AutoGenerateColumns = false;
             pathDataToStudentInfo = Application.StartupPath + @"\Data\student.husc";
+            pathDataHistory = Application.StartupPath + @"\Data\history.husc";
             pathDataToHistoryInfo = Application.StartupPath + @"\Data\history.husc";
             var student = StudentService.GetStudent(pathDataToStudentInfo, idStudent);
             if (student != null)
@@ -32,7 +35,7 @@ namespace APP3
                 dtpNgaySinh.Value = student.DateOfBirth;
                 txtNoiSinh.Text = student.PlaceOfBirth;
                 cmbGioiTinh.SelectedIndex = (int)student.Gender;
-                student.ListLearningHistory = LearningHistoryService.GetList(pathDataToHistoryInfo, idStudent);
+                student.ListLearningHistory = LearningHistoryService.GetListFromFile(pathDataHistory, idStudent);
                 bdsQuaTrinhHocTap.DataSource = student.ListLearningHistory;
                 dtgvQuaTrinhHocTap.DataSource = bdsQuaTrinhHocTap;
                 lblTongSoMuc.Text = student.ListLearningHistory.Count().ToString();
@@ -110,14 +113,51 @@ namespace APP3
 
         }
 
-        private void toolStripButton1_Click(object sender, EventArgs e)
-        {
-
-        }
+ 
 
         private void bindingSource2_CurrentChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            var history = bdsQuaTrinhHocTap.Current as LearningHistory;
+            if(history != null)
+            {
+                LearningHistoryService.Delete(pathDataHistory, history.Id);
+                bdsQuaTrinhHocTap.RemoveCurrent();
+                MessageBox.Show("Đã xóa thành công id = " + history.Id);
+            }
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            var history = bdsQuaTrinhHocTap.Current as LearningHistory;
+            if(history != null)
+            {
+                var f = new Form2(history);
+                var rs = f.ShowDialog();
+                if (rs == DialogResult.OK)
+                {
+                    // load lai du lieu
+                    bdsQuaTrinhHocTap.DataSource = LearningHistoryService.GetListFromFile(pathDataHistory, student.Id);
+                    dtgvQuaTrinhHocTap.DataSource = bdsQuaTrinhHocTap;
+                }
+            }
+           
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            var f = new Form2(student);
+            var rs = f.ShowDialog();
+            if(rs == DialogResult.OK)
+            {
+                // load lai du lieu
+                bdsQuaTrinhHocTap.DataSource = LearningHistoryService.GetListFromFile(pathDataHistory, student.Id);
+                dtgvQuaTrinhHocTap.DataSource = bdsQuaTrinhHocTap;
+            }
         }
     }
 }

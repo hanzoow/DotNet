@@ -9,3 +9,4 @@ D:\c#\APP3\APP3\obj\Debug\APP3.exe
 D:\c#\APP3\APP3\obj\Debug\APP3.pdb
 D:\c#\APP3\APP3\bin\Debug\Data\student.husc
 D:\c#\APP3\APP3\bin\Debug\Data\history.husc
+D:\c#\APP3\APP3\obj\Debug\APP3.Form2.resources

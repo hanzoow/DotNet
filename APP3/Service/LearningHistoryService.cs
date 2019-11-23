@@ -37,6 +37,12 @@ namespace APP3.Service
             }
             return rs;
         }
+
+        internal static void Add(string pathDataHistory, LearningHistory history)
+        {
+            throw new NotImplementedException();
+        }
+
         public static List<LearningHistory> GetList(string path,string idStudent)
         {
             List<LearningHistory> rs = new List<LearningHistory>();
@@ -52,8 +58,9 @@ namespace APP3.Service
                         FromYear = Int32.Parse(listItem[1]),
                         ToYear = Int32.Parse(listItem[2]),
                         Address = listItem[3],
-                        IdStudent = idStudent
+                        IdStudent = listItem[4]
                     };
+
                     rs.Add(learning);
 
                 }
@@ -64,6 +71,11 @@ namespace APP3.Service
             {
                 return null;
             }
+        }
+
+        internal static void Update(string pathDataHistory, LearningHistory learningHistory)
+        {
+            throw new NotImplementedException();
         }
 
         public static List<LearningHistory> GetListFromFile(string path,string idStudent)
@@ -77,11 +89,12 @@ namespace APP3.Service
                     var items = line.Split(new char[] { '#' });
                     LearningHistory history = new LearningHistory
                     {
-                        Id = items[0],
+                        Id = idStudent,
                         FromYear = int.Parse(items[1]),
                         ToYear = int.Parse(items[2]),
                         Address = items[3],
                         IdStudent = items[4]
+                        
                     };
                     if(history.IdStudent == idStudent)
                     {
@@ -95,6 +108,10 @@ namespace APP3.Service
                 return null;
             }
         }
-        
+
+        internal static void Delete(string pathDataHistory, string id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
