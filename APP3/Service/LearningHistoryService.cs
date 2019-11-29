@@ -40,10 +40,11 @@ namespace APP3.Service
 
         internal static void Add(string pathDataHistory, LearningHistory history)
         {
+
             throw new NotImplementedException();
         }
 
-        public static List<LearningHistory> GetList(string path,string idStudent)
+        public static List<LearningHistory> GetList(string path, string idStudent)
         {
             List<LearningHistory> rs = new List<LearningHistory>();
             if (File.Exists(path))
@@ -78,25 +79,25 @@ namespace APP3.Service
             throw new NotImplementedException();
         }
 
-        public static List<LearningHistory> GetListFromFile(string path,string idStudent)
+        public static List<LearningHistory> GetListFromFile(string path, string idStudent)
         {
             if (File.Exists(path))
             {
                 var lines = File.ReadAllLines(path);
                 List<LearningHistory> rs = new List<LearningHistory>();
-                foreach(var line in lines)
+                foreach (var line in lines)
                 {
                     var items = line.Split(new char[] { '#' });
                     LearningHistory history = new LearningHistory
                     {
-                        Id = idStudent,
+                        Id = items[0],
                         FromYear = int.Parse(items[1]),
                         ToYear = int.Parse(items[2]),
                         Address = items[3],
                         IdStudent = items[4]
-                        
+
                     };
-                    if(history.IdStudent == idStudent)
+                    if (history.IdStudent == idStudent)
                     {
                         rs.Add(history);
                     }
@@ -111,7 +112,24 @@ namespace APP3.Service
 
         internal static void Delete(string pathDataHistory, string id)
         {
-            throw new NotImplementedException();
+            string tempFile = Path.GetTempFileName();
+
+            using (var sr = new StreamReader(pathDataHistory))
+            using (var sw = new StreamWriter(tempFile))
+            {
+                string line;
+
+                while ((line = sr.ReadLine()) != null)
+                {
+                    var items = line.Split(new char[] { '#' });
+                    if (items[0] != id)
+                        sw.WriteLine(line);
+                }
+            }
+
+            File.Delete(pathDataHistory);
+            File.Move(tempFile, pathDataHistory);
         }
     }
+
 }
