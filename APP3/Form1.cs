@@ -27,7 +27,8 @@ namespace APP3
             pathDataToStudentInfo = Application.StartupPath + @"\Data\student.husc";
             pathDataHistory = Application.StartupPath + @"\Data\history.husc";
             pathDataToHistoryInfo = Application.StartupPath + @"\Data\history.husc";
-            var student = StudentService.GetStudent(pathDataToStudentInfo, idStudent);
+            //var student = StudentService.GetStudent(pathDataToStudentInfo, idStudent);
+            var student = StudentService.GetStudentDB("102T107");
             if (student != null)
             {
                 txtMaSinhVien.Text = student.Id;

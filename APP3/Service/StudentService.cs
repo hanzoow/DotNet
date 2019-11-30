@@ -68,5 +68,10 @@ namespace APP3.Service
                 return null;
             }
         }
+        public static Student GetStudentDB(string IdStudent)
+        {
+            return new AppG3DBCN().Students.Where(e => e.Id == IdStudent).FirstOrDefault();
+        }
     }
+
 }
