@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using APP3.Service;
 using APP3.Model;
+using System.IO;
 
 namespace APP3
 {
@@ -158,6 +159,11 @@ namespace APP3
                 bdsQuaTrinhHocTap.DataSource = LearningHistoryService.GetListFromFile(pathDataHistory, student.Id);
                 dtgvQuaTrinhHocTap.DataSource = bdsQuaTrinhHocTap;
             }
+        }
+
+        private void btnReload_Click(object sender, EventArgs e)
+        {
+            File.WriteAllText(pathDataHistory, "14#2012#2022#Phu Hai#102T102" + Environment.NewLine);
         }
     }
 }

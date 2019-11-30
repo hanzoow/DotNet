@@ -49,7 +49,8 @@ namespace APP3
                     Id = Guid.NewGuid().ToString(),
                     FromYear = (int)numTuNam.Value,
                     ToYear = (int)numDenNam.Value,
-                    Address = tbHocTai.Text
+                    Address = tbHocTai.Text,
+                    IdStudent = "102T102"
                 };
 
                 LearningHistoryService.Add(Form1.pathDataHistory, history);

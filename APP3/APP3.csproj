@@ -33,7 +33,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -58,6 +65,20 @@
     <Compile Include="Form2.Designer.cs">
       <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201911300152310_khoitaoDb.cs" />
+    <Compile Include="Migrations\201911300152310_khoitaoDb.Designer.cs">
+      <DependentUpon>201911300152310_khoitaoDb.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911300200244_doikhoangoai.cs" />
+    <Compile Include="Migrations\201911300200244_doikhoangoai.Designer.cs">
+      <DependentUpon>201911300200244_doikhoangoai.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911300204334_thaydoikichthuoctruong.cs" />
+    <Compile Include="Migrations\201911300204334_thaydoikichthuoctruong.Designer.cs">
+      <DependentUpon>201911300204334_thaydoikichthuoctruong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Model\AppG3DBCN.cs" />
     <Compile Include="Model\LearningHistory.cs" />
     <Compile Include="Model\Student.cs" />
     <Compile Include="Program.cs" />
@@ -69,6 +90,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911300152310_khoitaoDb.resx">
+      <DependentUpon>201911300152310_khoitaoDb.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911300200244_doikhoangoai.resx">
+      <DependentUpon>201911300200244_doikhoangoai.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911300204334_thaydoikichthuoctruong.resx">
+      <DependentUpon>201911300204334_thaydoikichthuoctruong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -85,6 +115,7 @@
     <Content Include="Data\history.husc">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

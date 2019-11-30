@@ -55,7 +55,7 @@
             this.cmbGioiTinh = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.ptcb1 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnReload = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.lnk = new System.Windows.Forms.LinkLabel();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -299,18 +299,19 @@
             this.ptcb1.DragEnter += new System.Windows.Forms.DragEventHandler(this.ptcb1_DragEnter);
             this.ptcb1.DoubleClick += new System.EventHandler(this.ptcb1_DoubleClick);
             // 
-            // button1
+            // btnReload
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.button1.Location = new System.Drawing.Point(677, 601);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(90, 42);
-            this.button1.TabIndex = 13;
-            this.button1.Text = "Cập nhật";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnReload.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnReload.Image = ((System.Drawing.Image)(resources.GetObject("btnReload.Image")));
+            this.btnReload.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.btnReload.Location = new System.Drawing.Point(677, 601);
+            this.btnReload.Name = "btnReload";
+            this.btnReload.Size = new System.Drawing.Size(90, 42);
+            this.btnReload.TabIndex = 13;
+            this.btnReload.Text = "Cập nhật";
+            this.btnReload.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnReload.UseVisualStyleBackColor = true;
+            this.btnReload.Click += new System.EventHandler(this.btnReload_Click);
             // 
             // button2
             // 
@@ -360,7 +361,7 @@
             this.Controls.Add(this.txtNoiSinh);
             this.Controls.Add(this.lnk);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnReload);
             this.Controls.Add(this.ptcb1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.cmbGioiTinh);
@@ -415,7 +416,7 @@
         private System.Windows.Forms.ComboBox cmbGioiTinh;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.PictureBox ptcb1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnReload;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.LinkLabel lnk;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;

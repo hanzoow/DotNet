@@ -40,8 +40,8 @@ namespace APP3.Service
 
         internal static void Add(string pathDataHistory, LearningHistory history)
         {
-
-            throw new NotImplementedException();
+           
+           // throw new NotImplementedException();
         }
 
         public static List<LearningHistory> GetList(string path, string idStudent)
